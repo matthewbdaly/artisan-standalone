@@ -43,6 +43,16 @@ class Application extends BaseApplication implements ApplicationContract
     }
 
     /**
+     * Get the path to the storage directory.
+     *
+     * @return string
+     */
+    public function storagePath()
+    {
+        return 'storage';
+    }
+
+    /**
      * Get the path to the routes cache file.
      *
      * @return string
