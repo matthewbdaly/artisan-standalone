@@ -13,7 +13,7 @@ require 'vendor/autoload.php';
 |
 */
 
-$app = new Illuminate\Foundation\Application(
+$app = new Matthewbdaly\ArtisanStandalone\Base\Application(
     realpath(__DIR__.'/../')
 );
 
