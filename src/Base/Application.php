@@ -6,13 +6,16 @@ use Illuminate\Foundation\Application as BaseApplication;
 use Illuminate\Contracts\Foundation\Application as ApplicationContract;
 use RuntimeException;
 
+/**
+ * Customised application instance - amends the paths to point to the parent package
+ */
 class Application extends BaseApplication implements ApplicationContract
 {
 
     /**
      * Get the path to the application "src" directory.
      *
-     * @param  string $path Optionally, a path to append to the app path
+     * @param  string $path Optionally, a path to append to the app path.
      * @return string
      */
     public function path($path = '')
@@ -23,7 +26,7 @@ class Application extends BaseApplication implements ApplicationContract
     /**
      * Get the path to the application configuration files.
      *
-     * @param  string $path Optionally, a path to append to the config path
+     * @param  string $path Optionally, a path to append to the config path.
      * @return string
      */
     public function configPath($path = '')
@@ -34,7 +37,7 @@ class Application extends BaseApplication implements ApplicationContract
     /**
      * Get the path to the bootstrap directory.
      *
-     * @param  string $path Optionally, a path to append to the bootstrap path
+     * @param  string $path Optionally, a path to append to the bootstrap path.
      * @return string
      */
     public function bootstrapPath($path = '')
