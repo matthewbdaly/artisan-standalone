@@ -1,6 +1,6 @@
 # artisan-standalone
 
-Allows you to use Artisan outside of a Laravel install.
+Allows you to use Artisan outside of a full Laravel or Lumen install.
 
 Why do I want this?
 -------------------
@@ -21,3 +21,8 @@ Then you can access the Artisan console in your package as follows:
 ```bash
 vendor/bin/artisan
 ```
+
+Can I use it globally?
+----------------------
+
+In theory it might, but I haven't set it up to do so - it doesn't actually include Laravel as a dependency, so you'd need to install `laravel/framework` globally as well. My recommendation is to install it on a per-project basis. You might want to check out my [boilerplate package](https://github.com/matthewbdaly/laravel-package-boilerplate), which includes this one as a dependency, and is a good starting point for building a standalone Laravel package.
