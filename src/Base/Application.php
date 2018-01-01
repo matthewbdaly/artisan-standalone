@@ -28,7 +28,7 @@ class Application extends BaseApplication implements ApplicationContract
      */
     public function configPath($path = '')
     {
-        return 'vendor'.DIRECTORY_SEPARATOR.'matthewbdaly'.DIRECTORY_SEPARATOR.'artisan-standalone'.DIRECTORY_SEPARATOR.'config'.($path ? DIRECTORY_SEPARATOR.$path : $path);
+        return $this->basePath.DIRECTORY_SEPARATOR.'vendor'.DIRECTORY_SEPARATOR.'matthewbdaly'.DIRECTORY_SEPARATOR.'artisan-standalone'.DIRECTORY_SEPARATOR.'config'.($path ? DIRECTORY_SEPARATOR.$path : $path);
     }
 
     /**
@@ -39,7 +39,7 @@ class Application extends BaseApplication implements ApplicationContract
      */
     public function bootstrapPath($path = '')
     {
-        return 'bootstrap'.($path ? DIRECTORY_SEPARATOR.$path : $path);
+        return $this->basePath.DIRECTORY_SEPARATOR.'bootstrap'.($path ? DIRECTORY_SEPARATOR.$path : $path);
     }
 
     /**
@@ -49,7 +49,7 @@ class Application extends BaseApplication implements ApplicationContract
      */
     public function storagePath()
     {
-        return 'storage';
+        return $this->basePath.DIRECTORY_SEPARATOR.'storage';
     }
 
     /**
@@ -59,7 +59,7 @@ class Application extends BaseApplication implements ApplicationContract
      */
     public function getCachedRoutesPath()
     {
-        return __DIR__.DIRECTORY_SEPARATOR.'vendor'.DIRECTORY_SEPARATOR.'matthewbdaly'.DIRECTORY_SEPARATOR.'artisan-standalone'.DIRECTORY_SEPARATOR.'routes/console.php';
+        return $this->basePath.DIRECTORY_SEPARATOR.'vendor'.DIRECTORY_SEPARATOR.'matthewbdaly'.DIRECTORY_SEPARATOR.'artisan-standalone'.DIRECTORY_SEPARATOR.'routes/console.php';
     }
 
     /**
@@ -74,9 +74,8 @@ class Application extends BaseApplication implements ApplicationContract
         if (! is_null($this->namespace)) {
             return $this->namespace;
         }
-
-        $path = realpath(__DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR);
-        $composer = json_decode(file_get_contents($path.base_path('composer.json')), true);
+        $path = $this->basePath;
+        $composer = json_decode(file_get_contents($path.DIRECTORY_SEPARATOR.'composer.json'), true);
 
         foreach ((array) data_get($composer, 'autoload.psr-4') as $namespace => $path) {
             return $this->namespace = $namespace;

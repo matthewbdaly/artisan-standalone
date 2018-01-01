@@ -14,7 +14,7 @@ require 'vendor/autoload.php';
 */
 
 $app = new Matthewbdaly\ArtisanStandalone\Base\Application(
-    realpath(__DIR__.'/vendor/matthewbdaly/artisan-standalone')
+    getcwd()
 );
 
 $storagePath = base_path() . "../../storage";
