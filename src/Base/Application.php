@@ -65,7 +65,8 @@ class Application extends BaseApplication implements ApplicationContract
             return $this->namespace;
         }
 
-        $composer = json_decode(file_get_contents(base_path('composer.json')), true);
+        $path = realpath(__DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR);
+        $composer = json_decode(file_get_contents($path.base_path('composer.json')), true);
 
         foreach ((array) data_get($composer, 'autoload.psr-4') as $namespace => $path) {
             return $this->namespace = $namespace;
