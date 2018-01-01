@@ -8,6 +8,18 @@ use RuntimeException;
 
 class Application extends BaseApplication implements ApplicationContract
 {
+
+    /**
+     * Get the path to the application "src" directory.
+     *
+     * @param  string  $path Optionally, a path to append to the app path
+     * @return string
+     */
+    public function path($path = '')
+    {
+        return $this->basePath.DIRECTORY_SEPARATOR.'src'.($path ? DIRECTORY_SEPARATOR.$path : $path);
+    }
+
     /**
      * Get the application namespace.
      *
