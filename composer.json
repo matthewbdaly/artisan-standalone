@@ -11,6 +11,9 @@
         "squizlabs/php_codesniffer": "^3.1",
         "psy/psysh": "^0.8.11"
     },
+    "bin": [
+        "artisan"
+    ],
     "license": "MIT",
     "authors": [
         {
