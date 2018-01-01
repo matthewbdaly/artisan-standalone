@@ -1,0 +1,38 @@
+{
+    "name": "matthewbdaly/laravel-package-boilerplate",
+    "description": "Starting boilerplate for Laravel packages. Override the content in here when creating your own package",
+    "type": "library",
+    "keywords": ["laravel","lumen"],
+    "require": {},
+    "require-dev": {
+        "orchestra/testbench": "3.5",
+        "phpunit/phpunit": "^6.3",
+        "mockery/mockery": "^0.9.9",
+        "squizlabs/php_codesniffer": "^3.1",
+        "psy/psysh": "^0.8.11"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Matthew Daly",
+            "email": "matthewbdaly@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Matthewbdaly\\ArtisanStandalone\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Matthewbdaly\\ArtisanStandalone\\Providers\\ServiceProvider"
+            ]
+        }
+    }
+}
