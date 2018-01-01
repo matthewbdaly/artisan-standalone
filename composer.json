@@ -1,6 +1,6 @@
 {
-    "name": "matthewbdaly/laravel-package-boilerplate",
-    "description": "Starting boilerplate for Laravel packages. Override the content in here when creating your own package",
+    "name": "matthewbdaly/artisan-standalone",
+    "description": "Allows you to use Artisan outside of a Laravel install",
     "type": "library",
     "keywords": ["laravel","lumen"],
     "require": {},
