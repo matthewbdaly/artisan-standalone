@@ -21,6 +21,38 @@ class Application extends BaseApplication implements ApplicationContract
     }
 
     /**
+     * Get the path to the application configuration files.
+     *
+     * @param  string  $path Optionally, a path to append to the config path
+     * @return string
+     */
+    public function configPath($path = '')
+    {
+        return 'vendor'.DIRECTORY_SEPARATOR.'matthewbdaly'.DIRECTORY_SEPARATOR.'artisan-standalone'.DIRECTORY_SEPARATOR.'config'.($path ? DIRECTORY_SEPARATOR.$path : $path);
+    }
+
+    /**
+     * Get the path to the bootstrap directory.
+     *
+     * @param  string  $path Optionally, a path to append to the bootstrap path
+     * @return string
+     */
+    public function bootstrapPath($path = '')
+    {
+        return 'bootstrap'.($path ? DIRECTORY_SEPARATOR.$path : $path);
+    }
+
+    /**
+     * Get the path to the routes cache file.
+     *
+     * @return string
+     */
+    public function getCachedRoutesPath()
+    {
+        return __DIR__.DIRECTORY_SEPARATOR.'vendor'.DIRECTORY_SEPARATOR.'matthewbdaly'.DIRECTORY_SEPARATOR.'artisan-standalone'.DIRECTORY_SEPARATOR.'routes/console.php';
+    }
+
+    /**
      * Get the application namespace.
      *
      * @return string
