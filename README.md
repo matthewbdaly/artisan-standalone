@@ -1,5 +1,8 @@
-# laravel-package-boilerplate
+# artisan-standalone
 
-Boilerplate for Laravel packages. Use it as a starting point for your own Laravel packages.
+Allows you to use Artisan outside of a Laravel install.
 
-Includes PHPUnit and PHPCodeSniffer configuration, as well as a known good Travis CI configuration and a couple of base test cases.
+Why do I want this?
+-------------------
+
+It's intended so that when you're building a standalone Laravel package, you still have access to the Artisan commands for generating boilerplate and don't have to generate them in your application, then copy them elsewhere.
