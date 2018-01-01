@@ -1,5 +1,7 @@
 <?php
 
+require 'vendor/autoload.php';
+
 /*
 |--------------------------------------------------------------------------
 | Create The Application
@@ -27,18 +29,13 @@ $app = new Illuminate\Foundation\Application(
 */
 
 $app->singleton(
-    Illuminate\Contracts\Http\Kernel::class,
-    DeployDroid\Http\Kernel::class
-);
-
-$app->singleton(
     Illuminate\Contracts\Console\Kernel::class,
-    DeployDroid\Console\Kernel::class
+    Matthewbdaly\ArtisanStandalone\Console\Kernel::class
 );
 
 $app->singleton(
     Illuminate\Contracts\Debug\ExceptionHandler::class,
-    DeployDroid\Exceptions\Handler::class
+    Matthewbdaly\ArtisanStandalone\Exceptions\Handler::class
 );
 
 /*

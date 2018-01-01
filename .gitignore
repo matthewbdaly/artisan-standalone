@@ -2,3 +2,5 @@
 .DS_Store
 vendor/
 composer.lock
+storage/
+*.swp
