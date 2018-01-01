@@ -4,11 +4,7 @@ namespace Matthewbdaly\ArtisanStandalone\Exceptions;
 
 use Exception;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
-use Illuminate\Http\Request;
 
-/**
- * Exception handler
- */
 class Handler extends ExceptionHandler
 {
     /**
@@ -35,7 +31,7 @@ class Handler extends ExceptionHandler
      *
      * This is a great spot to send exceptions to Sentry, Bugsnag, etc.
      *
-     * @param  \Exception $exception The exception instance.
+     * @param  \Exception $exception
      * @return void
      */
     public function report(Exception $exception)
@@ -46,11 +42,11 @@ class Handler extends ExceptionHandler
     /**
      * Render an exception into an HTTP response.
      *
-     * @param  \Illuminate\Http\Request $request   The HTTP request.
-     * @param  \Exception               $exception The exception.
+     * @param  \Illuminate\Http\Request $request
+     * @param  \Exception               $exception
      * @return \Illuminate\Http\Response
      */
-    public function render(Request $request, Exception $exception)
+    public function render($request, Exception $exception)
     {
         return parent::render($request, $exception);
     }
