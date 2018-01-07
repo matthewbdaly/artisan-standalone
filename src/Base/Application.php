@@ -60,7 +60,7 @@ class Application extends BaseApplication implements ApplicationContract
      */
     public function resourcePath($path = '')
     {
-        return $this->path();
+        return $this->path().($path ? DIRECTORY_SEPARATOR.$path : $path);
     }
 
     /**
