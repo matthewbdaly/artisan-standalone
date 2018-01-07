@@ -53,6 +53,17 @@ class Application extends BaseApplication implements ApplicationContract
     }
 
     /**
+     * Get the path to the resources directory.
+     *
+     * @param  string  $path
+     * @return string
+     */
+    public function resourcePath($path = '')
+    {
+        return $this->path();
+    }
+
+    /**
      * Get the path to the database directory.
      *
      * @param  string $path Optionally, a path to append to the database path
@@ -60,7 +71,7 @@ class Application extends BaseApplication implements ApplicationContract
      */
     public function databasePath($path = '')
     {
-        return $this->basePath.DIRECTORY_SEPARATOR.'database';
+        return $this->path().DIRECTORY_SEPARATOR.'database';
     }
 
     /**
