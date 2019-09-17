@@ -17,7 +17,7 @@ class Application extends BaseApplication implements ApplicationContract
      */
     public function path($path = '')
     {
-        return $this->basePath.DIRECTORY_SEPARATOR.'src'.($path ? DIRECTORY_SEPARATOR.$path : $path);
+        return $this->basePath . DIRECTORY_SEPARATOR . 'src' . ($path ? DIRECTORY_SEPARATOR . $path : $path);
     }
 
     /**
@@ -28,7 +28,7 @@ class Application extends BaseApplication implements ApplicationContract
      */
     public function configPath($path = '')
     {
-        return $this->basePath.DIRECTORY_SEPARATOR.'vendor'.DIRECTORY_SEPARATOR.'matthewbdaly'.DIRECTORY_SEPARATOR.'artisan-standalone'.DIRECTORY_SEPARATOR.'config'.($path ? DIRECTORY_SEPARATOR.$path : $path);
+        return $this->basePath . DIRECTORY_SEPARATOR . 'vendor' . DIRECTORY_SEPARATOR . 'matthewbdaly' . DIRECTORY_SEPARATOR . 'artisan-standalone' . DIRECTORY_SEPARATOR . 'config' . ($path ? DIRECTORY_SEPARATOR . $path : $path);
     }
 
     /**
@@ -39,7 +39,7 @@ class Application extends BaseApplication implements ApplicationContract
      */
     public function bootstrapPath($path = '')
     {
-        return $this->basePath.DIRECTORY_SEPARATOR.'bootstrap'.($path ? DIRECTORY_SEPARATOR.$path : $path);
+        return $this->basePath . DIRECTORY_SEPARATOR . 'bootstrap' . ($path ? DIRECTORY_SEPARATOR . $path : $path);
     }
 
     /**
@@ -49,7 +49,7 @@ class Application extends BaseApplication implements ApplicationContract
      */
     public function storagePath()
     {
-        return $this->basePath.DIRECTORY_SEPARATOR.'storage';
+        return $this->basePath . DIRECTORY_SEPARATOR . 'storage';
     }
 
     /**
@@ -60,7 +60,7 @@ class Application extends BaseApplication implements ApplicationContract
      */
     public function resourcePath($path = '')
     {
-        return $this->path().($path ? DIRECTORY_SEPARATOR.$path : $path);
+        return $this->path() . ($path ? DIRECTORY_SEPARATOR . $path : $path);
     }
 
     /**
@@ -71,7 +71,7 @@ class Application extends BaseApplication implements ApplicationContract
      */
     public function databasePath($path = '')
     {
-        return $this->path().DIRECTORY_SEPARATOR.'database';
+        return $this->path() . DIRECTORY_SEPARATOR . 'database';
     }
 
     /**
@@ -81,7 +81,7 @@ class Application extends BaseApplication implements ApplicationContract
      */
     public function getCachedRoutesPath()
     {
-        return $this->basePath.DIRECTORY_SEPARATOR.'vendor'.DIRECTORY_SEPARATOR.'matthewbdaly'.DIRECTORY_SEPARATOR.'artisan-standalone'.DIRECTORY_SEPARATOR.'routes/console.php';
+        return $this->basePath . DIRECTORY_SEPARATOR . 'vendor' . DIRECTORY_SEPARATOR . 'matthewbdaly' . DIRECTORY_SEPARATOR . 'artisan-standalone' . DIRECTORY_SEPARATOR . 'routes/console.php';
     }
 
     /**
@@ -97,7 +97,7 @@ class Application extends BaseApplication implements ApplicationContract
             return $this->namespace;
         }
         $path = $this->basePath;
-        $composer = json_decode(file_get_contents($path.DIRECTORY_SEPARATOR.'composer.json'), true);
+        $composer = json_decode(file_get_contents($path . DIRECTORY_SEPARATOR . 'composer.json'), true);
 
         foreach ((array) data_get($composer, 'autoload.psr-4') as $namespace => $path) {
             return $this->namespace = $namespace;
