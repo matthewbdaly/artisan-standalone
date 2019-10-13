@@ -3,9 +3,10 @@
     "description": "Allows you to use Artisan outside of a Laravel install",
     "type": "library",
     "keywords": ["laravel","lumen"],
-    "require": {},
+    "require": {
+        "laravel/tinker": "^1.0"
+    },
     "require-dev": {
-        "laravel/tinker": "^1.0",
         "mockery/mockery": "~1.0",
         "orchestra/testbench": "4.0",
         "phpunit/phpunit": "^8.0",
