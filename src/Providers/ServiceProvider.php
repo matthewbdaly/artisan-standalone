@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Matthewbdaly\ArtisanStandalone\Providers;
 
 use Illuminate\Support\ServiceProvider as BaseServiceProvider;
@@ -16,7 +18,7 @@ class ServiceProvider extends BaseServiceProvider
      */
     public function boot()
     {
-        //
+        // Does not need to be filled in
     }
 
     /**
@@ -26,6 +28,6 @@ class ServiceProvider extends BaseServiceProvider
      */
     public function register()
     {
-        //
+        // Does not need to be filled in
     }
 }
